@@ -27,8 +27,6 @@
   <!-- icon fontawesome -->
   <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.3-web/css/all.min.css" />
   
-</head>
-
 <body>
   <div class="main" style="
         background-image: url(./assets/img/background-theme/backroundThemes/0.svg);
@@ -280,26 +278,27 @@
                 </div>
                 <div class="box signup hidden">
                   <span class="borderLine"></span>
-                  <form>
+                  <form id='register-form'>
                     <span class="button-close-modal btn-close">
                       <i class="fas fa-times"></i>
                     </span>
                     <h2>Đăng ký</h2>
                     <div class="inputBox">
-                      <input type="text" required="required" />
+                      <input type="text" name="username" id="username-register" class="username-register" required="required" />
                       <span>Tên đăng nhập</span>
                       <i></i>
                     </div>
                     <div class="inputBox">
-                      <input type="password" required="required" />
+                      <input type="password" name="password" id="password-register" class="password-register" required="required" />
                       <span>Mật khẩu</span>
                       <i></i>
                     </div>
                     <div class="inputBox">
-                      <input type="password" required="required" />
+                      <input type="password" name="confirm" id="confirm" class="confirm" required="required" />
                       <span>Xác nhận mật khẩu</span>
                       <i></i>
                     </div>
+                    <div class="register-message" id="register-message"></div>
                     <div class="links">
                       <a href="#"></a>
                       <a href="#" class="navigate--signin">Đăng nhập</a>

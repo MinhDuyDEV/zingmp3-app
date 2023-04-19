@@ -49,12 +49,14 @@ document.getElementById("login-form").addEventListener("submit", function (event
         loginSuccess = true;
         printMess();
         document.querySelector('.btn-open').textContent = "Đăng xuất";
-        // input ở form = ""
         document.getElementById('login-form').reset();
       }
       else {
         var message = jsonResponse.message;
         document.getElementById('login-message').innerHTML = message;
+        setTimeout(function () {
+          document.getElementById('login-message').innerHTML = "";
+        }, 1500);
       }
     }
   };
@@ -101,3 +103,21 @@ function printMess() {
     }, 3000);
   }
 }
+
+document.getElementById("register-form").addEventListener("submit", function (event) {
+  event.preventDefault();
+  var xhr = new XMLHttpRequest();
+  var url = "http://localhost/web_zingmp3/assets/server/register.php";
+  var formData = new FormData(document.getElementById("register-form"));
+  xhr.open("POST", url, true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var response = xhr.responseText;
+      var jsonResponse = JSON.parse(response);
+      var message = jsonResponse.message;
+      document.getElementById('register-message').innerHTML = message;
+      document.getElementById("register-form").reset();
+    }
+  };
+  xhr.send(formData);
+})
