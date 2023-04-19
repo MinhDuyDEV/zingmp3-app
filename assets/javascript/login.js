@@ -27,3 +27,77 @@ const closeModal = function () {
 };
 closeModalBtn.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
+
+var loginSuccess = false;
+document.getElementById("login-form").addEventListener("submit", function (event) {
+  event.preventDefault();
+  var xhr = new XMLHttpRequest();
+  var url = "http://localhost/web_zingmp3/assets/server/login.php";
+  var formData = new FormData(document.getElementById("login-form"));
+  xhr.open("POST", url, true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var response = xhr.responseText;
+      var jsonResponse = JSON.parse(response);
+      if (jsonResponse.success) {
+        var username = jsonResponse.username;
+        document.querySelector('.profile__name').textContent = username;
+        var message = jsonResponse.message;
+        document.querySelector('.profile__img').style.display = "block";
+        modal.classList.add("hidden");
+        overlay.classList.add("hidden");
+        loginSuccess = true;
+        printMess();
+        document.querySelector('.btn-open').textContent = "Đăng xuất";
+        // input ở form = ""
+        document.getElementById('login-form').reset();
+      }
+      else {
+        var message = jsonResponse.message;
+        document.getElementById('login-message').innerHTML = message;
+      }
+    }
+  };
+  xhr.send(formData);
+})
+
+document.querySelector('.btn-open').addEventListener('click', function () {
+  if (loginSuccess) {
+    document.querySelector('.profile__img').style.display = "none";
+    document.querySelector('.profile__name').textContent = "";
+    document.querySelector('.btn-open').textContent = "Đăng nhập";
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+    loginSuccess = false;
+    printMess();
+  }
+}
+)
+
+function printMess() {
+  const toatMain = $("#toast");
+  if (toatMain) {
+    const toast = document.createElement("div");
+    toast.classList.add("toast");
+    if (loginSuccess) {
+      toast.innerHTML = `
+                <div class="toast__item">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span>Đăng nhập thành công!</span>
+                </div>
+            `;
+    }
+    else {
+      toast.innerHTML = `
+                <div class="toast__item">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span>Đăng xuất thành công!</span>
+                </div>
+            `;
+    }
+    toatMain.appendChild(toast);
+    setTimeout(function () {
+      toatMain.removeChild(toast);
+    }, 3000);
+  }
+}

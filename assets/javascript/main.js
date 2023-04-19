@@ -1919,7 +1919,7 @@ const app = {
       } else {
         if (_this.currentIndex >= _this.songsData.length - 1) {
           $(".nextsong__last-item-end").textContent =
-            "HẾT BÀI RỒI BẠN ƠI! HAHA";
+            "Đang cập nhật bài hát, vui lòng thử lại sau!";
         } else {
           _this.renderNextSong();
           _this.scrollToActiveNextSong();
