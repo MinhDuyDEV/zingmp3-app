@@ -62,3 +62,19 @@ switchMode.addEventListener("change", function () {
     document.body.classList.remove("dark");
   }
 });
+
+document.getElementById("logout").onclick = function() {
+  location.href = "./index.php";
+}
+
+document.getElementById("pdf").onclick = function() {
+  var doc = new jsPDF();
+  doc.autoTable({
+      head: [['User', 'Date Upload', 'Status']],
+      body: [
+          ['Minh Duy', '01-05-2023', 'Completed'],
+          ['Minh Duy', '01-05-2023', 'Pending']
+      ]
+  });
+  doc.save("admin.pdf");
+}

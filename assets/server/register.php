@@ -12,12 +12,12 @@
         exit();
     }
 
-    $query = "SELECT * FROM customers WHERE username='$username'";
+    $query = "SELECT * FROM users WHERE username='$username'";
     $result = mysqli_query($db, $query);
     if (mysqli_num_rows($result) == 0) {
         if ($password == $confirm) {
             $hash = sha1($password);
-            $query = "INSERT INTO customers (username, password) VALUES ('$username', '$hash')";
+            $query = "INSERT INTO users (username, password, role) VALUES ('$username', '$hash', 'user')";
             mysqli_query($db, $query);
             $res = array('success' => true, 'message' => 'Tạo tài khoản thành công');
         }

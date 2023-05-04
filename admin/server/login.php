@@ -12,13 +12,13 @@
     }
 
     $password = $p = sha1($password);
-    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $query = "SELECT * FROM users WHERE username='$username' AND password='$password' and role='admin'";
     $result = mysqli_query($db, $query);
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
         $res = array('success' => true, 'message' => 'Đăng nhập thành công!', 'username' => $row['username']);
     } else {
-        $res = array('success' => false, 'message' => 'Thông tin tài khoản hoặc mật khẩu không chính xác!');
+        $res = array('success' => false, 'message' => 'Thông tin không chính xác!');
     }
     echo json_encode($res);
 ?>

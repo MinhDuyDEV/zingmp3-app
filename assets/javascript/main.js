@@ -49,14 +49,14 @@ var backgroundIndex = 0;
 // r = 50   // radius
 // a = 2    // angle (from 0 to Math.PI * 2)
 
-const app = {
+var app = {
   // sliderIndex: 0,
   songsData: [
     {
       background: "./assets/img/songs/0.webp",
       name: "Anh Đã Lạc Vào",
       singer: "Green, Đại Mèo Remix",
-      pathSong: "./assets/music/list-song/0.mp3",
+      pathSong: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/55/ce/ba/55ceba9f-0ea9-9aa2-fa2c-ba570942bc27/mzaf_13882151401244817076.plus.aac.p.m4a",
       duration: "04:27",
     },
     {

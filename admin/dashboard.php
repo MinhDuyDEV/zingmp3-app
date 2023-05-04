@@ -57,7 +57,7 @@
         <li>
           <a href="#" class="logout">
             <i class="bx bxs-log-out-circle"></i>
-            <span class="text">Logout</span>
+            <span name="logout" id ="logout" class="text">Logout</span>
           </a>
         </li>
       </ul>
@@ -107,7 +107,7 @@
           </div>
           <a href="#" class="btn-download">
             <i class="bx bxs-cloud-download"></i>
-            <span class="text">Download PDF</span>
+            <span id="pdf" name ="pdf" class="text">Download PDF</span>
           </a>
         </div>
 
@@ -228,7 +228,6 @@
       <!-- MAIN -->
     </section>
     <!-- CONTENT -->
-
-    <script src="./script.js"></script>
+    <script src="./javascript/script.js"></script>
   </body>
 </html>

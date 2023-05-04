@@ -150,8 +150,7 @@
               <i class="fas fa-search header__width-search-icon js__sub-color"></i>
               <!-- header__width-search-input--white -->
               <!-- header__width-search-input--dark -->
-              <input placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV . . ." type="text"
-                class="header__width-search-input" />
+              <input name="search" id="search" placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV . . ." type="text" class="header__width-search-input" />
               <!-- header__width-search-sub--white -->
               <!-- header__width-search-sub--green -->
               <!-- header__width-search-sub--gray -->
@@ -871,7 +870,7 @@
                           Replay
                         </div>
                         <div class="option-all__playlist-item-content-name2 js__sub-color">
-                          Văn Sơn Nguyễn
+                          Điệp-Duy-Tài
                         </div>
                       </div>
                     </li>
