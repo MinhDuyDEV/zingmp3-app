@@ -6,6 +6,7 @@ const navigateSignup = document.querySelector(".navigate--signup");
 const navigateSignin = document.querySelector(".navigate--signin");
 const signup = document.querySelector(".signup");
 const signin = document.querySelector(".signin");
+const addPlaylist = document.querySelector("sidebar__add-playlist");
 const navigateToSignup = function () {
   signup.classList.remove("hidden");
   signin.classList.add("hidden");
@@ -19,6 +20,7 @@ navigateSignin.addEventListener("click", navigateToSignin);
 const openModal = function () {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
+  addPlaylist.classList.remove("hidden");
 };
 openModalBtn.addEventListener("click", openModal);
 const closeModal = function () {
@@ -123,40 +125,46 @@ document
     xhr.send(formData);
   });
 
-  // import app from "./main.js";
-  const input = document.querySelector('#search');
-  const audioElement = document.querySelector('#audio');
-  input.addEventListener('keydown', event => {
-    if (event.key === 'Enter') {
-      const searchTerm = event.target.value; // Lấy giá trị được nhập bởi người dùng
-      const url = `https://itunes.apple.com/search?term=${searchTerm}&entity=song&limit=16`;
-  
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          const songElements = document.querySelectorAll('.songs-item');
+// import app from "./main.js";
+const input = document.querySelector("#search");
+const audioElement = document.querySelector("#audio");
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    const searchTerm = event.target.value; // Lấy giá trị được nhập bởi người dùng
+    const url = `https://itunes.apple.com/search?term=${searchTerm}&entity=song&limit=16`;
 
-          const songElementsToReplace = Array.from(songElements).slice(0);
-  
-          data.results.forEach((song, index) => {
-            const songElement = songElementsToReplace[index];
-            // Cập nhật nội dung của thẻ HTML với dữ liệu mới
-            songElement.querySelector('.songs-item-left-img').style.backgroundImage = `url(${song.artworkUrl100})`;
-            songElement.querySelector('.songs-item-left-body-name').textContent = song.trackName;
-            songElement.querySelector('.songs-item-left-body-singer').textContent = song.artistName;
-            songElement.querySelector('.songs-item-center span').textContent = song.trackName;
-            audioElement.src = song.previewUrl;
-          });
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        const songElements = document.querySelectorAll(".songs-item");
 
-          const newSongsData = data.results.map(song => ({
-            background: song.artworkUrl100,
-            name: song.trackName,
-            singer: song.artistName,
-            pathSong: song.previewUrl,
-            duration: '', // API không cung cấp thông tin về thời lượng bài hát
-          }));
-  
-          app.songsData.splice(0, 16, ...newSongsData);
+        const songElementsToReplace = Array.from(songElements).slice(0);
+
+        data.results.forEach((song, index) => {
+          const songElement = songElementsToReplace[index];
+          // Cập nhật nội dung của thẻ HTML với dữ liệu mới
+          songElement.querySelector(
+            ".songs-item-left-img"
+          ).style.backgroundImage = `url(${song.artworkUrl100})`;
+          songElement.querySelector(".songs-item-left-body-name").textContent =
+            song.trackName;
+          songElement.querySelector(
+            ".songs-item-left-body-singer"
+          ).textContent = song.artistName;
+          songElement.querySelector(".songs-item-center span").textContent =
+            song.trackName;
+          audioElement.src = song.previewUrl;
         });
-    }
-  });
+
+        const newSongsData = data.results.map((song) => ({
+          background: song.artworkUrl100,
+          name: song.trackName,
+          singer: song.artistName,
+          pathSong: song.previewUrl,
+          duration: "", // API không cung cấp thông tin về thời lượng bài hát
+        }));
+
+        app.songsData.splice(0, 16, ...newSongsData);
+      });
+  }
+});

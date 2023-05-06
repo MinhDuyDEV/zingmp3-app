@@ -462,6 +462,9 @@ body {
 #content main .table-data .order table tr td .status.pending {
   background: var(--orange);
 }
+#content main .table-data .order table tr td .status.pointer {
+  cursor: pointer;
+}
 
 #content main .table-data .todo {
   flex-grow: 1;
@@ -508,6 +511,10 @@ body {
   #content nav .nav-link {
     display: none;
   }
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 576px) {
