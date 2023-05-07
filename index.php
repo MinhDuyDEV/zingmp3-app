@@ -2194,7 +2194,7 @@
         </div>
         <div class="col l-3 m-2 s-0">
           <div class="music-control__right">
-            <i class="music-control__right-icon2 ipad-air-hiden js__main-color  fas fa-download"></i>
+            <i class="music-control__right-icon2 ipad-air-hiden js__main-color  fas fa-download" id = "download"></i>
             <i class="music-control__right-icon1 ipad-air-hiden js__main-color js__toast fas fa-photo-video"></i>
             <i class="music-control__right-icon2 ipad-air-hiden js__main-color js__toast fas fa-microphone"></i>
             <i class="music-control__right-icon3 ipad-air-hiden js__main-color js__toast far fa-square"></i>

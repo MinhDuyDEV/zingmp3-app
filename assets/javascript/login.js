@@ -6,7 +6,7 @@ const navigateSignup = document.querySelector(".navigate--signup");
 const navigateSignin = document.querySelector(".navigate--signin");
 const signup = document.querySelector(".signup");
 const signin = document.querySelector(".signin");
-const addPlaylist = document.querySelector("sidebar__add-playlist");
+// const addPlaylist = document.querySelector("sidebar__add-playlist");
 const navigateToSignup = function () {
   signup.classList.remove("hidden");
   signin.classList.add("hidden");
@@ -20,7 +20,6 @@ navigateSignin.addEventListener("click", navigateToSignin);
 const openModal = function () {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
-  addPlaylist.classList.remove("hidden");
 };
 openModalBtn.addEventListener("click", openModal);
 const closeModal = function () {
@@ -125,7 +124,6 @@ document
     xhr.send(formData);
   });
 
-// import app from "./main.js";
 const input = document.querySelector("#search");
 const audioElement = document.querySelector("#audio");
 input.addEventListener("keydown", (event) => {
@@ -161,7 +159,7 @@ input.addEventListener("keydown", (event) => {
           name: song.trackName,
           singer: song.artistName,
           pathSong: song.previewUrl,
-          duration: "", // API không cung cấp thông tin về thời lượng bài hát
+          duration: "00:30", // API không cung cấp thông tin về thời lượng bài hát
         }));
 
         app.songsData.splice(0, 16, ...newSongsData);

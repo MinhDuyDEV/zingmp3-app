@@ -56,7 +56,7 @@ var app = {
       background: "./assets/img/songs/0.webp",
       name: "Anh Đã Lạc Vào",
       singer: "Green, Đại Mèo Remix",
-      pathSong: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/55/ce/ba/55ceba9f-0ea9-9aa2-fa2c-ba570942bc27/mzaf_13882151401244817076.plus.aac.p.m4a",
+      pathSong: "./assets/music/list-song/0.mp3",
       duration: "04:27",
     },
     {
@@ -727,13 +727,11 @@ var app = {
     const htmls = songsData.map((song, index) => {
       return `
                 <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
-                <li class="songs-item js__song-item0 ${
-                  index == this.currentIndex ? "songs-item--active" : ""
-                } " data-index="${index}">
+                <li class="songs-item js__song-item0 ${index == this.currentIndex ? "songs-item--active" : ""
+        } " data-index="${index}">
                     <div class="songs-item-left">
-                        <div style="background-image: url(${
-                          song.background
-                        });" class="songs-item-left-img js__songs-item-left-img-0">
+                        <div style="background-image: url(${song.background
+        });" class="songs-item-left-img js__songs-item-left-img-0">
                             <div class="songs-item-left-img-playbtn"><i class="fas fa-play"></i></div>
                             <div class="songs-item-left-img-playing-box">
                                 <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
@@ -741,12 +739,10 @@ var app = {
                         </div>
 
                         <div class="songs-item-left-body">
-                            <h3 class="songs-item-left-body-name js__main-color">${
-                              song.name
-                            }</h3>
-                            <span class="songs-item-left-body-singer js__sub-color">${
-                              song.singer
-                            }</span>
+                            <h3 class="songs-item-left-body-name js__main-color">${song.name
+        }</h3>
+                            <span class="songs-item-left-body-singer js__sub-color">${song.singer
+        }</span>
                         </div>
                     </div>
                     <div class="songs-item-center tablet-hiden mobile-hiden  js__sub-color">
@@ -759,9 +755,8 @@ var app = {
                             <i class="fas fa-heart songs-item-right-tym-first"></i>
                             <i class="far fa-heart songs-item-right-tym-last"></i>
                         </span>
-                        <span class="songs-item-right-duration js__sub-color">${
-                          song.duration
-                        }</span>
+                        <span class="songs-item-right-duration js__sub-color">${song.duration
+        }</span>
                         <span class="songs-item-right-more js__main-color"><i class="fas fa-ellipsis-h"></i></span>
                     </div>
                 </li>`;
@@ -774,15 +769,13 @@ var app = {
     const htmls = songsData.map((song, index) => {
       return `
                 <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
-                <li class="songs-item js__song-item1 ${
-                  index == this.currentIndex
-                    ? "songs-item--active songs-item-playbtn--active"
-                    : ""
-                } " data-index="${index}">
+                <li class="songs-item js__song-item1 ${index == this.currentIndex
+          ? "songs-item--active songs-item-playbtn--active"
+          : ""
+        } " data-index="${index}">
                     <div class="songs-item-left">
-                        <div style="background-image: url(${
-                          song.background
-                        });" class="songs-item-left-img js__songs-item-left-img-1">
+                        <div style="background-image: url(${song.background
+        });" class="songs-item-left-img js__songs-item-left-img-1">
                             <div class="songs-item-left-img-playbtn"><i class="fas fa-play"></i></div>
                             <div class="songs-item-left-img-playing-box">
                                 <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
@@ -790,12 +783,10 @@ var app = {
                         </div>
 
                         <div class="songs-item-left-body">
-                            <h3 class="songs-item-left-body-name js__main-color">${
-                              song.name
-                            }</h3>
-                            <span class="songs-item-left-body-singer js__sub-color">${
-                              song.singer
-                            }</span>
+                            <h3 class="songs-item-left-body-name js__main-color">${song.name
+        }</h3>
+                            <span class="songs-item-left-body-singer js__sub-color">${song.singer
+        }</span>
                         </div>
                     </div>
                     <div class="songs-item-center tablet-hiden mobile-hiden js__sub-color">
@@ -808,9 +799,8 @@ var app = {
                             <i class="fas fa-heart songs-item-right-tym-first"></i>
                             <i class="far fa-heart songs-item-right-tym-last"></i>
                         </span>
-                        <span class="songs-item-right-duration js__sub-color">${
-                          song.duration
-                        }</span>
+                        <span class="songs-item-right-duration js__sub-color">${song.duration
+        }</span>
                         <span class="songs-item-right-more js__main-color"><i class="fas fa-ellipsis-h"></i></span>
                     </div>
                 </li>`;
@@ -826,19 +816,17 @@ var app = {
                 <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
                 <li class="songs-item">
                     <div class="songs-item-left">
-                        <span class="zingchart__item-left-stt ${
-                          index == 0
-                            ? "zingchart__item-first"
-                            : index == 1
-                            ? "zingchart__item-second"
-                            : index == 2
-                            ? "zingchart__item-third"
-                            : ""
-                        }">${index + 1}</span>
+                        <span class="zingchart__item-left-stt ${index == 0
+          ? "zingchart__item-first"
+          : index == 1
+            ? "zingchart__item-second"
+            : index == 2
+              ? "zingchart__item-third"
+              : ""
+        }">${index + 1}</span>
                         <span class="zingchart__item-left-line js__main-color">-</span>
-                        <div style="background-image: url(${
-                          song.background
-                        });" class="songs-item-left-img">
+                        <div style="background-image: url(${song.background
+        });" class="songs-item-left-img">
                             <div class="songs-item-left-img-playbtn"><i class="fas fa-play"></i></div>
                             <div class="songs-item-left-img-playing-box">
                                 <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
@@ -846,12 +834,10 @@ var app = {
                         </div>
 
                         <div class="songs-item-left-body">
-                            <h3 class="songs-item-left-body-name js__main-color">${
-                              song.name
-                            }</h3>
-                            <span class="songs-item-left-body-singer js__sub-color">${
-                              song.singer
-                            }</span>
+                            <h3 class="songs-item-left-body-name js__main-color">${song.name
+        }</h3>
+                            <span class="songs-item-left-body-singer js__sub-color">${song.singer
+        }</span>
                         </div>
                     </div>
                     <div class="songs-item-center tablet-hiden mobile-hiden js__sub-color">
@@ -864,9 +850,8 @@ var app = {
                             <i class="fas fa-heart songs-item-right-tym-first"></i>
                             <i class="far fa-heart songs-item-right-tym-last"></i>
                         </span>
-                        <span class="songs-item-right-duration js__sub-color">${
-                          song.duration
-                        }</span>
+                        <span class="songs-item-right-duration js__sub-color">${song.duration
+        }</span>
                         <span class="songs-item-right-more js__main-color"><i class="fas fa-ellipsis-h"></i></span>
                     </div>
                 </li>`
@@ -882,19 +867,17 @@ var app = {
                 <!-- songs-item-playing--active-onplay songs-item--active songs-item-playbtn--active -->
                 <li class="songs-item">
                     <div class="songs-item-left">
-                        <span class="zingchart__item-left-stt ${
-                          index == 0
-                            ? "zingchart__item-first"
-                            : index == 1
-                            ? "zingchart__item-second"
-                            : index == 2
-                            ? "zingchart__item-third"
-                            : ""
-                        }">${index + 1}</span>
+                        <span class="zingchart__item-left-stt ${index == 0
+          ? "zingchart__item-first"
+          : index == 1
+            ? "zingchart__item-second"
+            : index == 2
+              ? "zingchart__item-third"
+              : ""
+        }">${index + 1}</span>
                         <span class="zingchart__item-left-line">-</span>
-                        <div style="background-image: url(${
-                          song.background
-                        });" class="songs-item-left-img">
+                        <div style="background-image: url(${song.background
+        });" class="songs-item-left-img">
                             <div class="songs-item-left-img-playbtn"><i class="fas fa-play"></i></div>
                             <div class="songs-item-left-img-playing-box">
                                 <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
@@ -902,12 +885,10 @@ var app = {
                         </div>
 
                         <div class="songs-item-left-body">
-                            <h3 class="songs-item-left-body-name js__main-color">${
-                              song.name
-                            }</h3>
-                            <span class="songs-item-left-body-singer js__sub-color">${
-                              song.singer
-                            }</span>
+                            <h3 class="songs-item-left-body-name js__main-color">${song.name
+        }</h3>
+                            <span class="songs-item-left-body-singer js__sub-color">${song.singer
+        }</span>
                         </div>
                     </div>
                     <div class="songs-item-center tablet-hiden mobile-hiden js__sub-color">
@@ -920,9 +901,8 @@ var app = {
                             <i class="fas fa-heart songs-item-right-tym-first"></i>
                             <i class="far fa-heart songs-item-right-tym-last"></i>
                         </span>
-                        <span class="songs-item-right-duration js__sub-color">${
-                          song.duration
-                        }</span>
+                        <span class="songs-item-right-duration js__sub-color">${song.duration
+        }</span>
                         <span class="songs-item-right-more js__main-color"><i class="fas fa-ellipsis-h"></i></span>
                     </div>
                 </li>`;
@@ -936,30 +916,25 @@ var app = {
       return index <= this.currentIndex
         ? `
             <!-- nextsong__fist-item-headding--active nextsong__fist-item-playbtn--active-->
-            <div class="nextsong__fist-item nextsong__item ${
-              audio.onplay && index == this.currentIndex
-                ? "nextsong__fist-item-headding--active"
-                : ""
-            } ${
-            index == this.currentIndex
-              ? "nextsong__fist-item-background--active"
-              : ""
-          }" data-index="${index}">
-                <div class="nextsong__item-img" style="background-image: url(${
-                  song.background
-                });">
+            <div class="nextsong__fist-item nextsong__item ${audio.onplay && index == this.currentIndex
+          ? "nextsong__fist-item-headding--active"
+          : ""
+        } ${index == this.currentIndex
+          ? "nextsong__fist-item-background--active"
+          : ""
+        }" data-index="${index}">
+                <div class="nextsong__item-img" style="background-image: url(${song.background
+        });">
                     <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
                     <div class="songs-item-left-img-playing-box">
                         <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
                     </div>
                 </div>
                 <div class="nextsong__item-body">
-                    <span class="nextsong__item-body-heading ${
-                      index == this.currentIndex ? "" : "js__main-color"
-                    }">${song.name}</span>
-                    <span class="nextsong__item-body-depsc ${
-                      index == this.currentIndex ? "" : "js__sub-color"
-                    }">${song.singer}</span>
+                    <span class="nextsong__item-body-heading ${index == this.currentIndex ? "" : "js__main-color"
+        }">${song.name}</span>
+                    <span class="nextsong__item-body-depsc ${index == this.currentIndex ? "" : "js__sub-color"
+        }">${song.singer}</span>
                 </div>
                 <div class="nextsong__item-action">
                     <span class="nextsong__item-action-heart">
@@ -982,30 +957,25 @@ var app = {
       return index <= this.currentIndex
         ? `
             <!-- nextsong__fist-item-headding--active nextsong__fist-item-playbtn--active-->
-            <div class="nextsong__fist-item nextsong__item nextsong__fist-item-playbtn--active ${
-              audio.onplay && index == this.currentIndex
-                ? "nextsong__fist-item-headding--active"
-                : ""
-            } ${
-            index == this.currentIndex
-              ? "nextsong__fist-item-background--active"
-              : ""
-          }" data-index="${index}">
-                <div class="nextsong__item-img" style="background-image: url(${
-                  song.background
-                });">
+            <div class="nextsong__fist-item nextsong__item nextsong__fist-item-playbtn--active ${audio.onplay && index == this.currentIndex
+          ? "nextsong__fist-item-headding--active"
+          : ""
+        } ${index == this.currentIndex
+          ? "nextsong__fist-item-background--active"
+          : ""
+        }" data-index="${index}">
+                <div class="nextsong__item-img" style="background-image: url(${song.background
+        });">
                     <div class="nextsong__item-playbtn"><i class="fas fa-play"></i></div>
                     <div class="songs-item-left-img-playing-box">
                         <img class = "songs-item-left-img-playing" src="./assets/img/songs/icon-playing.gif" alt="playing">
                     </div>
                 </div>
                 <div class="nextsong__item-body">
-                    <span class="nextsong__item-body-heading ${
-                      index == this.currentIndex ? "" : "js__main-color"
-                    }">${song.name}</span>
-                    <span class="nextsong__item-body-depsc ${
-                      index == this.currentIndex ? "" : "js__sub-color"
-                    }">${song.singer}</span>
+                    <span class="nextsong__item-body-heading ${index == this.currentIndex ? "" : "js__main-color"
+        }">${song.name}</span>
+                    <span class="nextsong__item-body-depsc ${index == this.currentIndex ? "" : "js__sub-color"
+        }">${song.singer}</span>
                 </div>
                 <div class="nextsong__item-action">
                     <span class="nextsong__item-action-heart">
@@ -1130,9 +1100,8 @@ var app = {
   formatTime: function (number) {
     const minutes = Math.floor(number / 60);
     const seconds = Math.floor(number - minutes * 60);
-    return `${minutes < 10 ? "0" + minutes : minutes}:${
-      seconds < 10 ? "0" + seconds : seconds
-    }`;
+    return `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds
+      }`;
   },
 
   // HIỂN THỊ REMAIN TIME TIME VÀO PLAYER
@@ -1289,6 +1258,23 @@ var app = {
         volumeProgress.value = _this.volume;
       }
     };
+
+    function downloadFile(link, name){
+      var a = document.createElement('a');
+      a.href = link;
+      a.download = name;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    // download 
+    document.getElementById('download').addEventListener('click', function () {
+      var songIndex = 0; // index of the song you want to download
+      var song = app.songsData[songIndex];
+      downloadFile(song.pathSong, song.name + '.mp3');
+  });
+
 
     // TĂNG GIẢM ÂM LƯỢNG
     volumeProgress.onchange = function (e) {
