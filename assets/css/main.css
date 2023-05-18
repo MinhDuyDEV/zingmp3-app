@@ -1807,7 +1807,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-image: url(../img/cntrl-player/playerThemes/theme1.png);
+  background-color: #120c1c;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
@@ -1815,6 +1815,7 @@
   background-position-y: center;
   z-index: 1;
   padding: 0 20px;
+  border-top: 1px solid #ccc;
 }
 
 .music-control__left {
